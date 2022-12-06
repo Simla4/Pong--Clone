@@ -590,6 +590,7 @@ GameObject:
   m_Component:
   - component: {fileID: 971191100}
   - component: {fileID: 971191099}
+  - component: {fileID: 971191101}
   m_Layer: 0
   m_Name: Player1
   m_TagString: Untagged
@@ -638,6 +639,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &971191101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 971191098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75368388150bcca469afc4d851f9a1ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: 0
+  speed: 2.5
 --- !u!1 &1085108850
 GameObject:
   m_ObjectHideFlags: 0
@@ -728,7 +743,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -914,6 +929,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1814104260}
   - component: {fileID: 1814104259}
+  - component: {fileID: 1814104261}
   m_Layer: 0
   m_Name: Player2
   m_TagString: Untagged
@@ -962,6 +978,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1814104261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1814104258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75368388150bcca469afc4d851f9a1ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: 1
+  speed: 2.5
 --- !u!1 &1864293468
 GameObject:
   m_ObjectHideFlags: 0
