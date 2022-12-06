@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.UIElements;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private playerEnum player;
     [SerializeField] private float speed = 3f;
+    [SerializeField] private float yPosLimit = 4f;
 
     private List<KeyCode> playerInputs = new List<KeyCode>();
 
@@ -42,16 +44,20 @@ public class PlayerMovement : MonoBehaviour
 
     private void MovePlayer()
     {
-        var posY = transform.localPosition.y;
+        var pos = transform.localPosition;
         
         if (Input.GetKey(playerInputs[0]))
         {
-            transform.Translate(0, speed * Time.deltaTime, 0);
-            
+            pos.y += speed * Time.deltaTime;
+            var newPos = Mathf.Clamp(pos.y, -yPosLimit, yPosLimit);
+            transform.localPosition = new Vector3(pos.x, newPos, pos.z);
+
         }
         else if (Input.GetKey(playerInputs[1]))
         {
-            transform.Translate(0, -speed * Time.deltaTime, 0);
+            pos.y += -speed * Time.deltaTime;
+            var newPos = Mathf.Clamp(pos.y, -yPosLimit, yPosLimit);
+            transform.localPosition = new Vector3(pos.x, newPos, pos.z);
         }
     }
 
