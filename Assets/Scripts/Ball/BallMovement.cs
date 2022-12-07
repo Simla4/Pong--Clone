@@ -13,6 +13,16 @@ public class BallMovement : MonoBehaviour
 
     #region Callbacks
 
+    private void OnEnable()
+    {
+        EventManager.OnBallMove += AddStartingForce;
+    }
+
+    private void OnDisable()
+    {
+        EventManager.OnBallMove -= AddStartingForce;
+    }
+
     private void Start()
     {
         AddStartingForce();
