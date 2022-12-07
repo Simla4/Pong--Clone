@@ -652,7 +652,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: 0
-  speed: 8
+  speed: 10
   yPosLimit: 4
 --- !u!1 &1085108850
 GameObject:
@@ -1006,7 +1006,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: 1
-  speed: 8
+  speed: 10
   yPosLimit: 4
 --- !u!1 &1864293468
 GameObject:
