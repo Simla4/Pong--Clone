@@ -2,12 +2,16 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class BallMovement : MonoBehaviour
 {
     #region Variables
 
     [SerializeField] private Rigidbody2D rb;
+    [SerializeField] private float speed = 400;
+
+    private int direction = -1;
 
     #endregion
 
@@ -34,7 +38,20 @@ public class BallMovement : MonoBehaviour
 
     private void AddStartingForce()
     {
-        rb.AddForce(new Vector2(300, 300), ForceMode2D.Force);
+        var yPos = Random.Range(-4.75f, 4.75f);
+
+        transform.position = new Vector3(0, yPos, 0);
+
+        if (direction == -1)
+        {
+            direction = 1;
+        }
+        else
+        {
+            direction = -1;
+        }
+        
+        rb.AddForce(new Vector2(400 * direction, 400 * direction), ForceMode2D.Force);
     }
 
     #endregion

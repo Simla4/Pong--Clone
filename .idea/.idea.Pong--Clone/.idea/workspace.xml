@@ -8,6 +8,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Ball/Ball.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Managers/UIManager.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -68,7 +69,7 @@
       <updated>1670327644789</updated>
       <workItem from="1670327692789" duration="8883000" />
       <workItem from="1670446167805" duration="1389000" />
-      <workItem from="1670503737689" duration="2091000" />
+      <workItem from="1670503737689" duration="6036000" />
     </task>
     <servers />
   </component>

@@ -18,6 +18,11 @@ public class BallCollision : MonoBehaviour
             EventManager.OnPlayer1EarnScore?.Invoke();
             ResetBall();
         }
+
+        if (col.gameObject.CompareTag("Player"))
+        {
+            EventManager.OnBallCollision?.Invoke();
+        }
     }
 
     private void ResetBall()
