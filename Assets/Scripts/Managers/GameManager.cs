@@ -2,13 +2,14 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoSingleton<GameManager>
 {
     #region Variables
 
-    public int player1Score = 1;
-    public int player2Score = 1;
+    public int player1Score = 0;
+    public int player2Score = 0;
 
     #endregion
 
@@ -34,19 +35,25 @@ public class GameManager : MonoSingleton<GameManager>
     {
         player1Score++;
         
-        if (player1Score > 10)
+        if (player1Score == 10)
         {
-            Debug.Log("Player 1 Win!");
+            GameOver();
         }
     }
     private void ChangePleyer2Score()
     {
         player2Score++;
         
-        if (player2Score > 10)
+        if (player2Score == 10)
         {
-            Debug.Log("Player 2 Win!");
+            GameOver();
         }
+    }
+
+    private void GameOver()
+    {
+        Time.timeScale = 0;
+        EventManager.OnGameOver?.Invoke();
     }
 
     #endregion
