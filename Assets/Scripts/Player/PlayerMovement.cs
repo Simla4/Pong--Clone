@@ -12,7 +12,11 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private playerEnum player;
     [SerializeField] private float speed = 3f;
     [SerializeField] private float yPosLimit = 4f;
+    [SerializeField] private bool isAI;
+    [SerializeField] private GameObject ball;
 
+    private bool isBallComming;
+    
     private List<KeyCode> playerInputs = new List<KeyCode>();
 
     #endregion
@@ -45,6 +49,16 @@ public class PlayerMovement : MonoBehaviour
     private void MovePlayer()
     {
         var pos = transform.localPosition;
+
+        if (isAI == true)
+        {
+            if (ball.transform.position.x < -1)
+            {
+                pos.y = Mathf.MoveTowards(transform.position.y, ball.transform.position.y, Time.deltaTime * speed);
+                var newPos = Mathf.Clamp(pos.y, -yPosLimit, yPosLimit);
+                transform.localPosition = new Vector3(pos.x, newPos, pos.z);
+            }
+        }
         
         if (Input.GetKey(playerInputs[0]))
         {
