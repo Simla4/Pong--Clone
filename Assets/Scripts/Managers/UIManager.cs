@@ -11,6 +11,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject endGameUI;
     [SerializeField] private GameObject inGameUI;
     [SerializeField] private GameObject menuUI;
+    [SerializeField] private GameObject inGameObjects;
 
     [SerializeField] private TextMeshProUGUI player1ScoreTxt;
     [SerializeField] private TextMeshProUGUI player2ScoreTxt;
@@ -47,12 +48,20 @@ public class UIManager : MonoBehaviour
     {
         menuUI.SetActive(false);
         inGameUI.SetActive(true);
+        inGameObjects.SetActive(true);
     }
 
     private void ShowMenuUI()
     {
+        inGameObjects.SetActive(false);
         endGameUI.SetActive(false);
         menuUI.SetActive(true);
+    }
+
+    private void ResetScore()
+    {
+        player1ScoreTxt.text = "0";
+        player2ScoreTxt.text = "0";
     }
 
     private void ChangePlayer1ScoreUI()
