@@ -8,6 +8,8 @@ public class GameManager : MonoSingleton<GameManager>
 {
     #region Variables
 
+    [SerializeField] private PlayerMovement playerMovement;
+
     public int player1Score = 0;
     public int player2Score = 0;
 
@@ -54,6 +56,12 @@ public class GameManager : MonoSingleton<GameManager>
     {
         Time.timeScale = 0;
         EventManager.OnGameOver?.Invoke();
+    }
+
+    private void GameWithOnePlayer()
+    {
+        playerMovement.isAI = true;
+        playerMovement.speed = 4;
     }
 
     #endregion

@@ -10,11 +10,13 @@ public class PlayerMovement : MonoBehaviour
     #region Variables
 
     [SerializeField] private playerEnum player;
-    [SerializeField] private float speed = 3f;
     [SerializeField] private float yPosLimit = 4f;
     [SerializeField] private GameObject ball;
 
-    private bool isBallComming;
+    public bool isAI = false;
+    public float speed = 3f;
+    
+    
     
     private List<KeyCode> playerInputs = new List<KeyCode>();
 
@@ -49,7 +51,7 @@ public class PlayerMovement : MonoBehaviour
     {
         var pos = transform.localPosition;
 
-        if (player == playerEnum.Computer)
+        if (isAI == true)
         {
             if (ball.transform.position.x < -1)
             {
@@ -75,13 +77,11 @@ public class PlayerMovement : MonoBehaviour
     }
 
     #endregion
-    
 
 
     enum playerEnum
     {
         Player1,
-        Player2,
-        Computer
+        Player2
     }
 }

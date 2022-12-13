@@ -44,7 +44,7 @@ public class UIManager : MonoBehaviour
         endGameUI.SetActive(true);
     }
 
-    private void ShowInGameUI()
+    public void ShowInGameUI()
     {
         menuUI.SetActive(false);
         inGameUI.SetActive(true);
