@@ -12,7 +12,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private playerEnum player;
     [SerializeField] private float speed = 3f;
     [SerializeField] private float yPosLimit = 4f;
-    [SerializeField] private bool isAI;
     [SerializeField] private GameObject ball;
 
     private bool isBallComming;
@@ -50,7 +49,7 @@ public class PlayerMovement : MonoBehaviour
     {
         var pos = transform.localPosition;
 
-        if (isAI == true)
+        if (player == playerEnum.Computer)
         {
             if (ball.transform.position.x < -1)
             {
@@ -82,6 +81,7 @@ public class PlayerMovement : MonoBehaviour
     enum playerEnum
     {
         Player1,
-        Player2
+        Player2,
+        Computer
     }
 }
