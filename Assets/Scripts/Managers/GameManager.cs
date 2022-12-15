@@ -75,6 +75,7 @@ public class GameManager : MonoSingleton<GameManager>
         player1Score = 0;
         player2Score = 0;
         
+        Time.timeScale = 1;
         EventManager.OnBallMove?.Invoke();
     }
 

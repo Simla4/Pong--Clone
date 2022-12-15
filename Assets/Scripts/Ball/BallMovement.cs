@@ -48,7 +48,7 @@ public class BallMovement : MonoBehaviour
         
         rb.AddForce(new Vector2(speed * direction, speed * direction), ForceMode2D.Force);
 
-        Debug.Log(rb.velocity);
+        Debug.Log(Time.timeScale);
     }
 
     #endregion
