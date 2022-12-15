@@ -33,6 +33,12 @@ public class GameManager : MonoSingleton<GameManager>
 
     #region Other Methods
 
+    public void StartGame()
+    {
+        Time.timeScale = 1;
+        EventManager.OnBallMove?.Invoke();
+    }
+
     private void ChangePleyer1Score()
     {
         player1Score++;
@@ -62,6 +68,19 @@ public class GameManager : MonoSingleton<GameManager>
     {
         playerMovement.isAI = true;
         playerMovement.speed = 4;
+    }
+
+    public void RetryGame()
+    {
+        player1Score = 0;
+        player2Score = 0;
+        
+        EventManager.OnBallMove?.Invoke();
+    }
+
+    public void MainMenu()
+    {
+        SceneManager.LoadScene(0);
     }
 
     #endregion

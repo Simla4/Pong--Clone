@@ -40,7 +40,6 @@ public class UIManager : MonoBehaviour
 
     private void ShowEndGameUI()
     {
-        inGameUI.SetActive(false);
         endGameUI.SetActive(true);
     }
 
@@ -48,6 +47,7 @@ public class UIManager : MonoBehaviour
     {
         menuUI.SetActive(false);
         inGameUI.SetActive(true);
+        endGameUI.SetActive(false);
         inGameObjects.SetActive(true);
     }
 
@@ -58,7 +58,7 @@ public class UIManager : MonoBehaviour
         menuUI.SetActive(true);
     }
 
-    private void ResetScore()
+    public void ResetScore()
     {
         player1ScoreTxt.text = "0";
         player2ScoreTxt.text = "0";

@@ -27,11 +27,6 @@ public class BallMovement : MonoBehaviour
         EventManager.OnBallMove -= AddStartingForce;
     }
 
-    private void Start()
-    {
-        AddStartingForce();
-    }
-
     #endregion
 
     #region Other Methods
@@ -51,7 +46,9 @@ public class BallMovement : MonoBehaviour
             direction = -1;
         }
         
-        rb.AddForce(new Vector2(400 * direction, 400 * direction), ForceMode2D.Force);
+        rb.AddForce(new Vector2(speed * direction, speed * direction), ForceMode2D.Force);
+
+        Debug.Log(rb.velocity);
     }
 
     #endregion
